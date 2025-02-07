@@ -30,7 +30,7 @@ public class WordFinder {
       }
     }
     catch (IOException e) {
-      e.printStackTrace(); // Handle exceptions appropriately
+      e.printStackTrace();
     }
 
     Collections.sort(words);

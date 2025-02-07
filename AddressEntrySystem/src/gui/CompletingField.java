@@ -13,8 +13,6 @@ public class CompletingField extends JTextField {
   }
 
   public void setWordList(String filename) {
-    if (document != null) {
-      document.setWordList(filename);
-    }
+    document.setWordList(filename);
   }
 }
