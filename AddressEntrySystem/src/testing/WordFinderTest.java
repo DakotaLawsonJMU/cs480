@@ -18,19 +18,19 @@ class WordFinderTest {
     WordFinder finder = new WordFinder("street-names.txt");
 
     // Simple
-    assertEquals("647 State Route               ", finder.find("647 State Route"));
-    assertEquals("Abandoned Railroad            ", finder.find("Abandoned Railroad"));
-    assertEquals("Mary Virginia's               ", finder.find("Mary Virginia's"));
+    assertEquals("647 State Route", finder.find("647 State Route"));
+    assertEquals("Abandoned Railroad", finder.find("Abandoned Railroad"));
+    assertEquals("Mary Virginia's", finder.find("Mary Virginia's"));
 
     // Completions
-    assertEquals("Na Trang                      ", finder.find("Na"));
-    assertEquals("Wheatfield                    ", finder.find("Wheatf"));
-    assertEquals("Wheatgrain                    ", finder.find("Wheatg"));
-    assertEquals("Wheathusk                     ", finder.find("Wheath"));
-    assertEquals("Wheatlan                      ", finder.find("Wheatl"));
-    assertEquals("Wheatland                     ", finder.find("Wheatland"));
-    assertEquals("Wheatland Acres               ", finder.find("Wheatland A"));
-    assertEquals("Wheatland Farms               ", finder.find("Wheatland F"));
+    assertEquals("Na Trang", finder.find("Na"));
+    assertEquals("Wheatfield", finder.find("Wheatf"));
+    assertEquals("Wheatgrain", finder.find("Wheatg"));
+    assertEquals("Wheathusk", finder.find("Wheath"));
+    assertEquals("Wheatlan", finder.find("Wheatl"));
+    assertEquals("Wheatland", finder.find("Wheatland"));
+    assertEquals("Wheatland Acres", finder.find("Wheatland A"));
+    assertEquals("Wheatland Farms", finder.find("Wheatland F"));
 
     // Non-existant words
     assertNull(finder.find("This is not an address that exists"));

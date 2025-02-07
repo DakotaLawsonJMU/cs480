@@ -30,7 +30,7 @@ public class WordFinder
       String line;
       while ((line = br.readLine()) != null)
       {
-        words.add(line);
+        words.add(line.stripTrailing());
       }
     }
     catch (IOException e)
