@@ -3,18 +3,30 @@ package gui;
 import javax.swing.text.AttributeSet;
 import javax.swing.text.BadLocationException;
 import javax.swing.text.PlainDocument;
-
 import text.WordFinder;
 
+/**
+ * Completing Document Class which serves as the model component in a model view controller design.
+ */
 public class CompletingDocument extends PlainDocument {
   private static final long serialVersionUID = 1L;
   private CompletingField field;
   WordFinder finder;
 
+  /**
+   * Constructor for the CompletingDocument class.
+
+   * @param field
+   *          the CompletingField associated with this model
+   */
   public CompletingDocument(CompletingField field) {
     this.field = field;
   }
 
+  /**
+   * Overloads the insertString method from PlainDocument, checks to see if there exists a known
+   * auto-completion and inserts it into the model if it exists.
+   */
   public void insertString(int offset, String s, AttributeSet as) throws BadLocationException {
     if (finder == null) {
       super.insertString(offset, s, as);
@@ -35,8 +47,7 @@ public class CompletingDocument extends PlainDocument {
       // Highlight the auto-filled part
       field.setSelectionStart(newText.length());
       field.setSelectionEnd(result.length());
-    }
-    else {
+    } else {
       // If no match found, insert as normal
       super.insertString(offset, s, as);
     }

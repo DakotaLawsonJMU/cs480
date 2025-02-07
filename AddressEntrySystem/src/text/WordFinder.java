@@ -16,7 +16,7 @@ public class WordFinder {
 
   /**
    * Constructor for a word finder object.
-   * 
+
    * @param fileName
    *          the word file to load into the word list.
    */
@@ -28,8 +28,7 @@ public class WordFinder {
       while ((line = br.readLine()) != null) {
         words.add(line);
       }
-    }
-    catch (IOException e) {
+    } catch (IOException e) {
       e.printStackTrace();
     }
 
@@ -38,7 +37,7 @@ public class WordFinder {
 
   /**
    * Finds the first word with the provided prefix.
-   * 
+
    * @param prefix
    *          the beginning of a word.
    * @return the first word (alphabetically, in the list of valid words) that begins with the given
@@ -47,8 +46,9 @@ public class WordFinder {
   public String find(String prefix) {
     // This takes O(n) time, however, if this was done with a tree this would be O(log n)
     for (String word : words) {
-      if (word.startsWith(prefix))
+      if (word.startsWith(prefix)) {
         return word;
+      }
     }
     return null;
   }
