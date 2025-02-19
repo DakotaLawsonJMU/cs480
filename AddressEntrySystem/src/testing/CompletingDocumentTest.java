@@ -44,7 +44,7 @@ class CompletingDocumentTest {
       fail("insertion without successful search failed");
     }
 
-    String wheat = "Wheatfield                    ";
+    String wheat = "Wheatfield";
     
     try {
       document.insertString(0, "Wheatf", null);
